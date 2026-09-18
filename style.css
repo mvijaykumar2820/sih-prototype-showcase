@@ -1,0 +1,307 @@
+/* SIH Prototype Showcase Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+section {
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+section h2 {
+    background: #f8f9fa;
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prototype-link .link-box,
+.youtube-video .video-box {
+    padding: 30px;
+    text-align: center;
+}
+
+.link-box {
+    background: #f0f7ff;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.link-url {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2980b9;
+    text-decoration: none;
+    word-break: break-all;
+    padding: 15px;
+    background: white;
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.link-url:hover {
+    background: #e8f4fc;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.copy-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.copy-btn:hover {
+    background: #219a52;
+    transform: translateY(-1px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.video-box {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 10px;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#youtube-url {
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 280px;
+    transition: border-color 0.3s ease;
+}
+
+#youtube-url:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.video-controls button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.video-controls button:hover {
+    background: #c0392b;
+    transform: translateY(-1px);
+}
+
+.video-controls button:active {
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+    }
+
+    .link-box {
+        padding: 25px;
+    }
+
+    .link-url {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    .copy-btn,
+    .video-controls button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #youtube-url {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .video-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .video-controls > * {
+        width: 100%;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ecf0f1;
+    }
+
+    .container {
+        background-color: #1a1a1a;
+    }
+
+    header {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    }
+
+    section {
+        background: #2d2d2d;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    section h2 {
+        background: #3d3d3d;
+        color: #ecf0f1;
+        border-bottom: 1px solid #4a4a4a;
+    }
+
+    .link-box {
+        background: #2d2d2d;
+    }
+
+    .link-url {
+        color: #63b3ed;
+        background: #1a1a1a;
+        border: 2px dashed #4a90e2;
+    }
+
+    .link-url:hover {
+        background: #252525;
+        border-color: #63b3ed;
+    }
+
+    .copy-btn {
+        background: #2ecc71;
+    }
+
+    .copy-btn:hover {
+        background: #27ae60;
+    }
+
+    .video-controls button {
+        background: #e74c3c;
+    }
+
+    .video-controls button:hover {
+        background: #c0392b;
+    }
+
+    #youtube-url {
+        background: #1a1a1a;
+        border: 2px solid #4a4a4a;
+        color: #ecf0f1;
+    }
+
+    #youtube-url:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+    }
+
+    footer {
+        color: #95a5a6;
+        border-top: 1px solid #3d3d3d;
+    }
+}
