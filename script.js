@@ -8,7 +8,7 @@ function copyLink(elementId) {
     navigator.clipboard.writeText(linkText).then(() => {
         // Show temporary feedback
         const originalText = linkElement.innerHTML;
-        linkElement.innerHTML = '<span style="color: #27ae60;">Copied!</span>';
+        linkElement.innerHTML = '<span style="color: #10b981;">Copied!</span>';
         setTimeout(() => {
             linkElement.innerHTML = originalText;
         }, 2000);
@@ -58,10 +58,10 @@ function loadYouTubeVideo() {
     const btn = document.querySelector('.video-controls button');
     const originalText = btn.textContent;
     btn.textContent = 'Loaded!';
-    btn.style.background = '#27ae60';
+    btn.style.background = '#10b981';
     setTimeout(() => {
         btn.textContent = originalText;
-        btn.style.background = '#e74c3c';
+        btn.style.background = '#6366f1';
     }, 1500);
 }
 
