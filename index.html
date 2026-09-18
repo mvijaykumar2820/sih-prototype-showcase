@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIH Prototype Showcase</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crime Graph — ByteForce</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>SIH Prototype Showcase</h1>
-            <p>Smart India Hackathon Project Presentation</p>
-        </header>
 
-        <main class="content-wrapper">
-            <section class="website-preview">
-                <h2>Website Preview</h2>
-                <div class="preview-box">
-                    <iframe id="website-frame" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </section>
+  <header>
+    <span class="badge">SIH 2026 · SIH26189</span>
+    <h1>Crime Graph</h1>
+    <p class="subtitle">AI-Powered Criminal Network Analysis System — Team ByteForce</p>
+  </header>
 
-            <section class="youtube-video">
-                <h2>YouTube Video</h2>
-                <div class="video-box">
-                    <iframe id="youtube-frame" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="video-controls">
-                    <input type="text" id="youtube-url" placeholder="Enter YouTube URL or ID">
-                    <button onclick="loadYouTubeVideo()">Load Video</button>
-                </div>
-            </section>
-        </main>
+  <main class="grid">
+    <a href="#" class="card" id="prototype-link" aria-label="Open prototype">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>
+      </div>
+      <h2>Prototype</h2>
+      <p>Live working demo — FIR extraction, evidence graph, hidden-link detection.</p>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
 
-        <footer>
-            <p>&copy; 2026 SIH Project. All rights reserved.</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+    <a href="#" class="card" id="youtube-link" aria-label="Open demo video">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <h2>Demo Video</h2>
+      <p>Full walkthrough of the pipeline and key features on YouTube.</p>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </main>
+
+  <footer>Crime Graph — ByteForce © 2026</footer>
+
 </body>
 </html>
