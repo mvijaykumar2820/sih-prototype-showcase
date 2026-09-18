@@ -1,23 +1,5 @@
 // SIH Prototype Showcase JavaScript
 
-// Function to copy link to clipboard
-function copyLink(elementId) {
-    const linkElement = document.getElementById(elementId);
-    const linkText = linkElement.textContent;
-
-    navigator.clipboard.writeText(linkText).then(() => {
-        // Show temporary feedback
-        const originalText = linkElement.innerHTML;
-        linkElement.innerHTML = '<span style="color: #10b981;">Copied!</span>';
-        setTimeout(() => {
-            linkElement.innerHTML = originalText;
-        }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-        alert('Failed to copy link. Please try again.');
-    });
-}
-
 // Function to load YouTube video
 function loadYouTubeVideo() {
     const urlInput = document.getElementById('youtube-url');
@@ -58,10 +40,10 @@ function loadYouTubeVideo() {
     const btn = document.querySelector('.video-controls button');
     const originalText = btn.textContent;
     btn.textContent = 'Loaded!';
-    btn.style.background = '#10b981';
+    btn.style.background = '#ffffff';
     setTimeout(() => {
         btn.textContent = originalText;
-        btn.style.background = '#6366f1';
+        btn.style.background = '#222222';
     }, 1500);
 }
 
@@ -70,21 +52,4 @@ document.getElementById('youtube-url').addEventListener('keypress', function(e) 
     if (e.key === 'Enter') {
         loadYouTubeVideo();
     }
-});
-
-// Initialize with empty states
-document.addEventListener('DOMContentLoaded', function() {
-    // Set placeholder text for prototype link
-    const prototypeLink = document.getElementById('prototype-link');
-    prototypeLink.textContent = 'https://your-prototype-link-here.com';
-    prototypeLink.href = '#';
-
-    // Add some interactivity to the link box
-    prototypeLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (this.textContent !== 'https://your-prototype-link-here.com') {
-            // If it's a real link, we could open it, but for now just copy
-            copyLink('prototype-link');
-        }
-    });
 });

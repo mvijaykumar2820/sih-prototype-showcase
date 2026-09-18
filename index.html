@@ -15,22 +15,21 @@
         </header>
 
         <main class="content-wrapper">
-            <section class="prototype-link">
-                <h2>Prototype Link</h2>
-                <div class="link-box">
-                    <a href="#" class="link-url" id="prototype-link">https://your-prototype-link-here.com</a>
-                    <button class="copy-btn" onclick="copyLink('prototype-link')">Copy Link</button>
+            <section class="website-preview">
+                <h2>Website Preview</h2>
+                <div class="preview-box">
+                    <iframe id="website-frame" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
             </section>
 
             <section class="youtube-video">
                 <h2>YouTube Video</h2>
                 <div class="video-box">
-                    <iframe id="youtube-frame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-                    <div class="video-controls">
-                        <input type="text" id="youtube-url" placeholder="Enter YouTube URL or ID">
-                        <button onclick="loadYouTubeVideo()">Load Video</button>
-                    </div>
+                    <iframe id="youtube-frame" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-controls">
+                    <input type="text" id="youtube-url" placeholder="Enter YouTube URL or ID">
+                    <button onclick="loadYouTubeVideo()">Load Video</button>
                 </div>
             </section>
         </main>

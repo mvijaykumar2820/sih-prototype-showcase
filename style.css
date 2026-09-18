@@ -1,14 +1,13 @@
-/* SIH Prototype Showcase Styles - Dark Theme, Two Column Layout */
+/* SIH Prototype Showcase - Black & White Only */
 :root {
-    --bg-primary: #0f172a; /* dark blue-gray */
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --accent: #6366f1; /* indigo */
-    --accent-hover: #4f46e5;
-    --border-radius: 8px;
-    --transition: 0.3s ease;
+    --bg: #000000;
+    --bg-light: #111111;
+    --bg-lighter: #222222;
+    --text: #ffffff;
+    --text-muted: #cccccc;
+    --border: #333333;
+    --radius: 8px;
+    --transition: 0.2s ease;
 }
 
 * {
@@ -20,11 +19,11 @@
 html { font-size: 16px; }
 
 body {
+    background-color: var(--bg);
+    color: var(--text);
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
     line-height: 1.5;
-    font-size: 0.875rem; /* 14px - small font */
+    font-size: 0.875rem; /* small font */
 }
 
 .container {
@@ -37,9 +36,9 @@ header {
     text-align: center;
     margin-bottom: 2.5rem;
     padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--bg-tertiary);
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 
 header h1 {
@@ -52,7 +51,7 @@ header h1 {
 
 header p {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-weight: 500;
 }
 
@@ -63,9 +62,9 @@ header p {
 
 section {
     flex: 1;
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--bg-tertiary);
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
     overflow: hidden;
 }
 
@@ -74,76 +73,44 @@ section h2 {
     font-size: 1.25rem;
     font-weight: 600;
     padding: 1.25rem 1.5rem;
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--bg-tertiary);
+    background-color: var(--bg-lighter);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
     margin: 0;
 }
 
-/* Prototype Link Section */
-.prototype-link .link-box {
-    padding: 2rem;
-    text-align: center;
-}
-
-.link-url {
-    display: inline-block;
-    font-family: 'Space Grotesk', monospace;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    word-break: break-all;
-    padding: 0.75rem 1.5rem;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--accent);
-    border-radius: var(--border-radius);
-    margin: 1.5rem 0;
-    transition: var(--transition);
-    max-width: 100%;
-    display: block;
-}
-
-.link-url:hover {
-    background: var(--accent);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-}
-
-.copy-btn {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
-}
-
-.copy-btn:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
-}
-
-.copy-btn:active {
-    transform: translateY(0);
-}
-
-/* YouTube Video Section */
-.youtube-video .video-box {
+/* Website Preview - Square */
+.website-preview .preview-box {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 */
-    background: #000;
-    border-radius: var(--border-radius);
-    overflow: hidden;
+    padding-bottom: 100%; /* 1:1 aspect ratio */
+    background-color: #000;
     margin: 1.5rem 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.website-preview .preview-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* YouTube Video - Smaller */
+.youtube-video .video-box {
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* limit width */
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    background-color: #000;
+    margin: 1.5rem auto; /* center */
+    overflow: hidden;
+    border-radius: var(--radius);
 }
 
 .youtube-video .video-box iframe {
@@ -155,6 +122,7 @@ section h2 {
     border: none;
 }
 
+/* Controls */
 .video-controls {
     display: flex;
     gap: 1rem;
@@ -169,64 +137,67 @@ section h2 {
     padding: 0.75rem 1rem;
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--bg-tertiary);
-    color: var(--text-primary);
-    border-radius: var(--border-radius);
+    background-color: var(--bg-lighter);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius);
     transition: var(--transition);
 }
 
 #youtube-url:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    border-color: var(--text);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
 }
 
 .video-controls button {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border: none;
+    background-color: var(--bg-lighter);
+    color: var(--text);
+    border: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
     white-space: nowrap;
 }
 
 .video-controls button:hover {
-    background: var(--accent-hover);
+    background-color: var(--bg);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
 }
 
 .video-controls button:active {
     transform: translateY(0);
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 3rem;
     padding: 1.5rem;
     font-size: 0.8rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--bg-tertiary);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 1024px) {
     .content-wrapper {
         flex-direction: column;
+        align-items: stretch;
     }
-
     section {
         margin-bottom: 2rem;
     }
-
     .container {
         padding: 1.5rem;
+    }
+    .youtube-video .video-box {
+        max-width: 100%;
+        margin: 1.5rem 0;
     }
 }
 
@@ -234,98 +205,20 @@ footer {
     header h1 {
         font-size: 1.75rem;
     }
-
     header p {
         font-size: 0.85rem;
     }
-
     section h2 {
         font-size: 1.1rem;
         padding: 1rem;
     }
-
-    .prototype-link .link-box,
+    .website-preview .preview-box,
     .video-controls {
         padding: 1.5rem;
     }
-
-    .link-url {
-        font-size: 0.85rem;
-        padding: 0.6rem 1.2rem;
-    }
-
-    .copy-btn,
+    #youtube-url,
     .video-controls button {
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
-    }
-}
-
-/* Light Mode Support (for when user prefers light) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-primary: #f8fafc;
-        --bg-secondary: #f1f5f9;
-        --bg-tertiary: #e2e8f0;
-        --text-primary: #0f172a;
-        --text-secondary: #334155;
-        --accent: #4f46e5;
-        --accent-hover: #4338ca;
-    }
-
-    body {
-        background-color: var(--bg-primary);
-        color: var(--text-primary);
-    }
-
-    header {
-        background: var(--bg-secondary);
-    }
-
-    section {
-        background: var(--bg-secondary);
-    }
-
-    section h2 {
-        background: var(--bg-tertiary);
-        color: var(--text-primary);
-    }
-
-    .link-url {
-        background: var(--bg-tertiary);
-        color: var(--accent);
-        border: 1px solid var(--accent);
-    }
-
-    .link-url:hover {
-        background: var(--accent);
-        color: var(--bg-primary);
-    }
-
-    .copy-btn,
-    .video-controls button {
-        background: var(--accent);
-        color: var(--bg-primary);
-    }
-
-    .copy-btn:hover,
-    .video-controls button:hover {
-        background: var(--accent-hover);
-    }
-
-    #youtube-url {
-        background: var(--bg-tertiary);
-        color: var(--text-primary);
-        border: 1px solid var(--bg-tertiary);
-    }
-
-    #youtube-url:focus {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
-    }
-
-    footer {
-        border-top: 1px solid var(--bg-tertiary);
-        color: var(--text-secondary);
     }
 }
