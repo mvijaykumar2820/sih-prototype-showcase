@@ -1,5 +1,5 @@
     const LINKS = {
-      prototype: "",   // e.g. "https://your-prototype-url.com"
+      prototype: "https://byte-force-c9pl.vercel.app/login",   // e.g. "https://your-prototype-url.com"
       youtube:   "",   // e.g. "https://youtube.com/watch?v=xxxx"
     };
     // ───────────────────────────────────────────────────────────
